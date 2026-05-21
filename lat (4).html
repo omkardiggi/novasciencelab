@@ -7148,8 +7148,8 @@
       if (name === 'dashboard') {
         renderDashboard();
         stopSim();
-        // No special init needed on dashboard open — virtual-lab is default
-
+        // Ensure default view is shown and synced with sidebar active state
+        switchDashView('virtual-lab');
       }
       if (name === 'quiz' || name === 'results') {
         stopSim();
