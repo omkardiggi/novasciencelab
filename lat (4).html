@@ -3545,6 +3545,278 @@
       border-color: #ef4444;
       background: #ef4444;
     }
+
+    /* ==========================================
+       RETELL AI TELEPHONE TUTOR WIDGET & ANIMATIONS
+       ========================================== */
+    .retell-section {
+      position: relative;
+      padding: 6rem 2rem;
+      background: radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.08), transparent 60%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .retell-container {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 900px) {
+      .retell-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .retell-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .retell-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #60a5fa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .retell-badge .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-g 1.5s infinite;
+    }
+
+    @keyframes pulse-g {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+    }
+
+    .retell-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .retell-title span {
+      background: linear-gradient(135deg, #60a5fa, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .retell-desc {
+      font-size: 0.95rem;
+      color: var(--text2);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .retell-feature-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .retell-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .retell-feature-icon {
+      font-size: 1.1rem;
+      background: rgba(96, 165, 250, 0.08);
+      border: 1px solid rgba(96, 165, 250, 0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      flex-shrink: 0;
+    }
+
+    /* Form Card */
+    .retell-card {
+      background: rgba(13, 17, 39, 0.65);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .retell-card:hover {
+      border-color: rgba(96, 165, 250, 0.3);
+      box-shadow: 0 25px 60px rgba(96, 165, 250, 0.1), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .retell-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .retell-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+      z-index: 2;
+      text-align: left;
+    }
+
+    .retell-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .retell-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .retell-input, .retell-select {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .retell-input:focus, .retell-select:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(96, 165, 250, 0.5);
+      box-shadow: 0 0 12px rgba(96, 165, 250, 0.25);
+    }
+
+    .retell-select option {
+      background: #0d1127;
+      color: #fff;
+    }
+
+    .retell-lang-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .retell-lang-tab {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text2);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .retell-lang-tab.active {
+      background: rgba(96, 165, 250, 0.15);
+      border-color: #60a5fa;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(96, 165, 250, 0.15);
+    }
+
+    .retell-call-btn {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      outline: none;
+    }
+
+    .retell-call-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+      filter: brightness(1.1);
+    }
+
+    .retell-call-btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .retell-call-btn:disabled {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text3);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .retell-call-status {
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      display: none;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
   </style>
 
   <!-- Three.js for 3D equipment rendering -->
@@ -3743,6 +4015,90 @@
       <div class="scroll-indicator">
         <span data-i18n="scrollHint">Scroll to explore</span>
         <div class="scroll-indicator-arrow"></div>
+      </div>
+    </section>
+
+    <!-- 📞 RETELL AI TELEPHONE TUTOR SECTION -->
+    <section class="retell-section" id="retell-section">
+      <div class="retell-container">
+        <!-- Left details -->
+        <div class="retell-left reveal">
+          <div class="retell-badge">
+            <span class="pulse-dot"></span>
+            Dynamic Phone Tutor
+          </div>
+          <h2 class="retell-title">Interactive Voice Study with your <span>AI Science Guide</span></h2>
+          <p class="retell-desc">
+            Need an expert to walk you through a complex simulation, explain tricky equations, or give a personalized verbal assessment? 
+            Submit your name, phone number, and study interest below, and your mobile will instantly ring with a friendly, highly intelligent AI scientist speaking in your preferred language!
+          </p>
+          <div class="retell-feature-row">
+            <div class="retell-feature-item">
+              <span class="retell-feature-icon">⚡</span>
+              <span><strong>Instant Dispatched Call:</strong> Ring rings on your mobile within 3-5 seconds</span>
+            </div>
+            <div class="retell-feature-item">
+              <span class="retell-feature-icon">🧠</span>
+              <span><strong>ELI5 & Expert Modes:</strong> Adapts vocabulary dynamically to match student age/rank</span>
+            </div>
+            <div class="retell-feature-item">
+              <span class="retell-feature-icon">🌐</span>
+              <span><strong>Native Language:</strong> Fluent conversational voice support in English, Hindi, and Kannada</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Card -->
+        <div class="retell-card reveal" style="animation-delay: 0.1s;">
+          <div class="retell-form">
+            <div class="retell-field-group">
+              <label class="retell-label" for="retell-student-name">Student Name</label>
+              <input type="text" id="retell-student-name" class="retell-input" placeholder="Enter your full name">
+            </div>
+
+            <div class="retell-field-group">
+              <label class="retell-label" for="retell-student-phone">Indian Phone Number</label>
+              <input type="tel" id="retell-student-phone" class="retell-input" placeholder="e.g. +91 98765 43210 or 10-digit number">
+            </div>
+
+            <div class="retell-field-group">
+              <label class="retell-label">Preferred Language</label>
+              <div class="retell-lang-tabs" id="retell-lang-tabs">
+                <button class="retell-lang-tab active" onclick="setRetellLang('English', this)">English</button>
+                <button class="retell-lang-tab" onclick="setRetellLang('Hindi', this)">Hindi</button>
+                <button class="retell-lang-tab" onclick="setRetellLang('Kannada', this)">Kannada</button>
+              </div>
+              <input type="hidden" id="retell-student-lang" value="English">
+            </div>
+
+            <div class="retell-field-group">
+              <label class="retell-label" for="retell-student-topic">Study Topic / Experiment</label>
+              <select id="retell-student-topic" class="retell-select">
+                <option value="General Science Discussion">General Science Q&amp;A</option>
+                <option value="Simple Pendulum Experiment">⚡ Simple Pendulum (Gravity &amp; Period)</option>
+                <option value="Thin Lens Optics Experiment">🔭 Lens &amp; Optics (Refraction)</option>
+                <option value="Projectile Motion Kinematics">☄️ Projectile Motion (Trajectory)</option>
+                <option value="Acid-Base Neutralization Titration">🧪 Acid-Base Titration (pH curves)</option>
+                <option value="Water Electrolysis Chemical Splitting">⚗️ Water Electrolysis (H2 &amp; O2)</option>
+                <option value="Calorimeter Heat Transfer Combustion">🔥 Combustion Reaction (Heat Energy)</option>
+                <option value="Chemical Reaction Rates Arrhenius">📉 Reaction Rates &amp; Catalysts</option>
+                <option value="Plant Cell Osmosis Plasmolysis">🔬 Osmosis (Turgidity)</option>
+                <option value="Photosynthesis Rate Inverse Square Law">🌿 Photosynthesis Rate (Oxygen levels)</option>
+                <option value="Strawberry DNA Lyse Extraction">🧬 Strawberry DNA Extraction</option>
+                <option value="Patient Heart Rate & Cardio ECG">🫀 Heart Rate &amp; ECG Feeds</option>
+                <option value="LED Series Resistor Calculation">🔌 LED &amp; Resistor safety</option>
+                <option value="Series and Parallel Resistance Circuits">🔋 Series vs Parallel Load</option>
+                <option value="Capacitor Charging RC Time Constant">⏱ RC Circuit charging curve</option>
+              </select>
+            </div>
+
+            <button id="retell-call-btn" class="retell-call-btn" onclick="startRetellCall()">
+              <span>📞 Call My Phone Now</span>
+            </button>
+
+            <div id="retell-call-status" class="retell-call-status"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -7056,13 +7412,151 @@
     }
 
     // ============================================================
-    // LANDING BG PARTICLES (light theme)
+    // RETELL AI VOICE TELEPHONE TUTOR
+    // ============================================================
+    function setRetellLang(lang, btn) {
+      document.getElementById('retell-student-lang').value = lang;
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.retell-lang-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    async function startRetellCall() {
+      const name = document.getElementById('retell-student-name').value.trim();
+      let phone = document.getElementById('retell-student-phone').value.trim();
+      const lang = document.getElementById('retell-student-lang').value;
+      const topic = document.getElementById('retell-student-topic').value;
+      const btn = document.getElementById('retell-call-btn');
+
+      if (!name) {
+        showRetellStatus('Please enter your name.', 'error');
+        return;
+      }
+      if (!phone) {
+        showRetellStatus('Please enter your phone number.', 'error');
+        return;
+      }
+
+      // Format Indian phone number
+      phone = phone.replace(/[\s\-()]/g, '');
+      if (!phone.startsWith('+')) {
+        if (phone.startsWith('91') && phone.length === 12) {
+          phone = '+' + phone;
+        } else if (phone.length === 10) {
+          phone = '+91' + phone;
+        } else {
+          showRetellStatus('Please enter a valid Indian phone number (e.g., +91XXXXXXXXXX).', 'error');
+          return;
+        }
+      }
+
+      showRetellStatus('📞 Initiating connection with Retell AI server...', 'info');
+      btn.disabled = true;
+      btn.innerHTML = `<span>⏳ Connecting...</span>`;
+      
+      try {
+        const apiKey = 'key_bbf4c3b7cb27343fdcebccc77eef';
+        const agentId = 'agent_31f9457ca7b819ba077b33c1b9';
+
+        // Step 1: List phone numbers to get an active outbound "from_number"
+        const listRes = await fetch('https://api.retellai.com/v2/list-phone-numbers', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`
+          }
+        });
+
+        if (!listRes.ok) {
+          throw new Error(`Auth failed or invalid Retell API configuration.`);
+        }
+
+        const numbers = await listRes.json();
+        let fromNumber = '';
+        if (numbers && numbers.length > 0) {
+          fromNumber = numbers[0].phone_number;
+        } else {
+          throw new Error('No registered active phone number found in your Retell AI account. Make sure you have at least one phone number bound to your agent.');
+        }
+
+        // Step 2: Trigger the call
+        const callRes = await fetch('https://api.retellai.com/v2/create-phone-call', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            from_number: fromNumber,
+            to_number: phone,
+            override_agent_id: agentId,
+            retell_llm_dynamic_variables: {
+              student_name: name,
+              language: lang,
+              topic: topic
+            }
+          })
+        });
+
+        const callData = await callRes.json();
+        if (callRes.ok) {
+          showRetellStatus(`🎉 Success! Phone call successfully placed to ${phone}. Answer your phone to speak to your personal AI scientist tutor!`, 'success');
+          btn.style.background = 'var(--green)';
+          btn.innerHTML = `<span>✅ Call Dispatched!</span>`;
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.style.background = '';
+            btn.innerHTML = `<span>📞 Call My Phone Now</span>`;
+          }, 6000);
+        } else {
+          throw new Error(callData.message || 'Error occurred while creating call.');
+        }
+      } catch (error) {
+        console.error(error);
+        showRetellStatus(error.message || 'An error occurred while connecting to the Retell calling server. Make sure your API key is fully active.', 'error');
+        btn.disabled = false;
+        btn.innerHTML = `<span>📞 Retry Call</span>`;
+      }
+    }
+
+    function showRetellStatus(msg, type) {
+      const statusEl = document.getElementById('retell-call-status');
+      statusEl.style.display = 'block';
+      statusEl.textContent = msg;
+      if (type === 'error') {
+        statusEl.style.color = '#f87171';
+        statusEl.style.background = 'rgba(239, 68, 68, 0.12)';
+        statusEl.style.border = '1px solid rgba(239, 68, 68, 0.25)';
+      } else if (type === 'success') {
+        statusEl.style.color = '#34d399';
+        statusEl.style.background = 'rgba(52, 211, 153, 0.12)';
+        statusEl.style.border = '1px solid rgba(52, 211, 153, 0.25)';
+      } else {
+        statusEl.style.color = '#60a5fa';
+        statusEl.style.background = 'rgba(96, 165, 250, 0.12)';
+        statusEl.style.border = '1px solid rgba(96, 165, 250, 0.25)';
+      }
+    }
+
+    // ============================================================
+    // LANDING BG PARTICLES (upgraded interactive magnetic mesh)
     // ============================================================
     function initBgCanvas() {
       const canvas = document.getElementById('bg-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let particles = [], W, H;
+      
+      let mouse = { x: null, y: null, radius: 160 };
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      canvas.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
       function resize() {
         const hero = canvas.parentElement;
         W = canvas.width = hero.clientWidth;
@@ -7075,36 +7569,53 @@
       }
 
       particles = [];
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 65; i++) {
         particles.push({
           x: Math.random() * W, y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
-          r: Math.random() * 1.6 + 0.4,
-          color: Math.random() > 0.5 ? '#2563eb' : '#7c3aed',
-          opacity: Math.random() * 0.35 + 0.1
+          vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.8 + 0.5,
+          color: Math.random() > 0.5 ? '#3b82f6' : '#8b5cf6',
+          opacity: Math.random() * 0.35 + 0.15
         });
       }
 
       function draw() {
         if (state.screen !== 'landing') return;
         ctx.clearRect(0, 0, W, H);
+        
         particles.forEach(p => {
           p.x += p.vx; p.y += p.vy;
+          
+          // Mouse interaction (Magnetic repulsion)
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              const angle = Math.atan2(dy, dx);
+              p.x += Math.cos(angle) * force * 1.5;
+              p.y += Math.sin(angle) * force * 1.5;
+            }
+          }
+
           if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
           if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fillStyle = p.color; ctx.globalAlpha = p.opacity; ctx.fill();
           ctx.globalAlpha = 1;
         });
+
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
+            if (dist < 130) {
               ctx.beginPath();
-              ctx.strokeStyle = `rgba(37,99,235,${0.08 * (1 - dist / 120)})`;
+              ctx.strokeStyle = `rgba(96,165,250,${0.12 * (1 - dist / 130)})`;
               ctx.lineWidth = 0.5;
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
