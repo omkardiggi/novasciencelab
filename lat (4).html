@@ -4286,6 +4286,10 @@
           <span style="margin-left:auto; background:linear-gradient(135deg, #fb923c, #f87171); color:white; font-size:0.6rem; padding:2px 7px; border-radius:999px; font-weight:700; letter-spacing:0.5px; position:relative; z-index:1;">AI</span>
           <span class="ds-sidebar-shimmer"></span>
         </button>
+        <button class="sidebar-link" onclick="switchDashView('phone-tutor')" style="background:transparent; color:var(--text2); border:1px solid transparent; padding:12px 16px; border-radius:12px; text-align:left; font-weight:500; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; gap:10px; transition:all 0.2s; position:relative; overflow:hidden;">
+          <span style="position:relative; z-index:1;">📞 AI Phone Tutor</span>
+          <span style="margin-left:auto; background:linear-gradient(135deg, #3b82f6, #8b5cf6); color:white; font-size:0.6rem; padding:2px 7px; border-radius:999px; font-weight:700; letter-spacing:0.5px; position:relative; z-index:1;">CALL</span>
+        </button>
         <button class="sidebar-link" onclick="switchDashView('daily-challenge')" style="background:transparent; color:var(--text2); border:1px solid transparent; padding:12px 16px; border-radius:12px; text-align:left; font-weight:500; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; gap:10px; transition:all 0.2s; position:relative;">
           🎯 Daily Challenge
           <span id="dc-sidebar-dot" style="display:none; position:absolute; top:10px; right:14px; width:8px; height:8px; background:#fb923c; border-radius:50%; box-shadow:0 0 8px #fb923c;"></span>
@@ -4329,9 +4333,104 @@
         </div>
       </div>
 
-      <!-- Views Area -->
       <div class="dash-views-area" style="flex:1; overflow-y:auto; position:relative;">
         
+        <!-- ================================================= -->
+        <!-- VIEW: AI PHONE TUTOR — Request a telephone lesson -->
+        <!-- ================================================= -->
+        <div id="view-phone-tutor" class="dash-view" style="display:none; padding:0; height:calc(100vh - 66px); overflow-y:auto; position:relative; background:radial-gradient(ellipse 900px 700px at 15% 0%, rgba(59,130,246,0.14), transparent 55%), radial-gradient(ellipse 800px 600px at 85% 30%, rgba(139,92,246,0.12), transparent 55%), radial-gradient(ellipse 700px 500px at 50% 100%, rgba(96,165,250,0.08), transparent 55%), #07091a;">
+          <div style="max-width:1100px; margin:0 auto; padding:3rem 2rem; position:relative; z-index:2;">
+            <div style="text-align:center; margin-bottom:2.5rem;">
+              <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:999px; background:rgba(96,165,250,0.12); border:1px solid rgba(96,165,250,0.3); font-size:0.7rem; font-weight:700; letter-spacing:1.4px; color:#93c5fd; margin-bottom:1rem; font-family:'JetBrains Mono', monospace;">
+                <span style="width:7px; height:7px; background:#3b82f6; border-radius:50%; box-shadow:0 0 8px #3b82f6; animation:pulse-g 1.8s infinite;"></span>
+                LIVE SCIENTIST CONNECT
+              </div>
+              <h1 style="font-size:2.6rem; font-weight:800; line-height:1.1; margin-bottom:0.8rem; color:#e2e8f0; letter-spacing:-0.02em;">
+                AI Telephone <span style="background:linear-gradient(135deg, #60a5fa, #8b5cf6, #22d3ee); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Tutor</span>
+              </h1>
+              <p style="font-size:1.05rem; color:#94a3b8; max-width:640px; margin:0 auto; line-height:1.6;">
+                Get an instant phone call from our Llama-3-powered AI scientist. Ask any questions, discuss virtual lab results, or review complex topics verbally!
+              </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:start;">
+              <!-- Details Left -->
+              <div style="background:rgba(17,20,43,0.5); border:1px solid rgba(96,165,250,0.15); border-radius:20px; padding:2rem; backdrop-filter:blur(12px);">
+                <h3 style="color:#e2e8f0; margin-top:0; margin-bottom:1rem; font-size:1.25rem; text-align:left;">How it works:</h3>
+                <div class="retell-feature-row">
+                  <div class="retell-feature-item">
+                    <span class="retell-feature-icon">📞</span>
+                    <span><strong>Outbound Dialing:</strong> Fill in your name and phone number. Our system triggers a secure call route directly to your phone.</span>
+                  </div>
+                  <div class="retell-feature-item">
+                    <span class="retell-feature-icon">🧠</span>
+                    <span><strong>ELI5 & Advanced modes:</strong> Instantly learns the topics you choose and matches the guidance depth to your profile.</span>
+                  </div>
+                  <div class="retell-feature-item">
+                    <span class="retell-feature-icon">🌐</span>
+                    <span><strong>Dynamic Translation:</strong> Tutor automatically speaks in your selected language (English, Hindi, or Kannada).</span>
+                  </div>
+                </div>
+                <div style="margin-top:2rem; padding:1rem; border-radius:12px; background:rgba(96,165,250,0.06); border:1px solid rgba(96,165,250,0.15); color:#94a3b8; font-size:0.85rem; line-height:1.5; text-align:left;">
+                  💡 <strong>Did you know?</strong> Voice-guided phone learning provides immediate reinforcement. Discussing your results with the AI telephone scientist helps retain experiment concepts longer!
+                </div>
+              </div>
+
+              <!-- Form Right -->
+              <div style="background:rgba(17,20,43,0.7); border:1px solid rgba(96,165,250,0.18); border-radius:20px; padding:2rem; backdrop-filter:blur(12px);">
+                <div class="retell-form">
+                  <div class="retell-field-group">
+                    <label class="retell-label" for="dash-retell-student-name">Student Name</label>
+                    <input type="text" id="dash-retell-student-name" class="retell-input" placeholder="Enter your full name">
+                  </div>
+
+                  <div class="retell-field-group">
+                    <label class="retell-label" for="dash-retell-student-phone">Indian Phone Number</label>
+                    <input type="tel" id="dash-retell-student-phone" class="retell-input" placeholder="e.g. +91 98765 43210 or 10-digit number">
+                  </div>
+
+                  <div class="retell-field-group">
+                    <label class="retell-label">Preferred Language</label>
+                    <div class="retell-lang-tabs" id="dash-retell-lang-tabs">
+                      <button class="retell-lang-tab active" onclick="setDashRetellLang('English', this)">English</button>
+                      <button class="retell-lang-tab" onclick="setDashRetellLang('Hindi', this)">Hindi</button>
+                      <button class="retell-lang-tab" onclick="setDashRetellLang('Kannada', this)">Kannada</button>
+                    </div>
+                    <input type="hidden" id="dash-retell-student-lang" value="English">
+                  </div>
+
+                  <div class="retell-field-group">
+                    <label class="retell-label" for="dash-retell-student-topic">Study Topic / Experiment</label>
+                    <select id="dash-retell-student-topic" class="retell-select">
+                      <option value="General Science Discussion">General Science Q&amp;A</option>
+                      <option value="Simple Pendulum Experiment">⚡ Simple Pendulum (Gravity &amp; Period)</option>
+                      <option value="Thin Lens Optics Experiment">🔭 Lens &amp; Optics (Refraction)</option>
+                      <option value="Projectile Motion Kinematics">☄️ Projectile Motion (Trajectory)</option>
+                      <option value="Acid-Base Neutralization Titration">🧪 Acid-Base Titration (pH curves)</option>
+                      <option value="Water Electrolysis Chemical Splitting">⚗️ Water Electrolysis (H2 &amp; O2)</option>
+                      <option value="Calorimeter Heat Transfer Combustion">🔥 Combustion Reaction (Heat Energy)</option>
+                      <option value="Chemical Reaction Rates Arrhenius">📉 Reaction Rates &amp; Catalysts</option>
+                      <option value="Plant Cell Osmosis Plasmolysis">🔬 Osmosis (Turgidity)</option>
+                      <option value="Photosynthesis Rate Inverse Square Law">🌿 Photosynthesis Rate (Oxygen levels)</option>
+                      <option value="Strawberry DNA Lyse Extraction">🧬 Strawberry DNA Extraction</option>
+                      <option value="Patient Heart Rate & Cardio ECG">🫀 Heart Rate &amp; ECG Feeds</option>
+                      <option value="LED Series Resistor Calculation">🔌 LED &amp; Resistor safety</option>
+                      <option value="Series and Parallel Resistance Circuits">🔋 Series vs Parallel Load</option>
+                      <option value="Capacitor Charging RC Time Constant">⏱ RC Circuit charging curve</option>
+                    </select>
+                  </div>
+
+                  <button id="dash-retell-call-btn" class="retell-call-btn" onclick="startDashRetellCall()">
+                    <span>📞 Call My Phone Now</span>
+                  </button>
+
+                  <div id="dash-retell-call-status" class="retell-call-status"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ================================================= -->
         <!-- VIEW: DOUBT SOLVER — Snap or type any textbook question -->
         <!-- ================================================= -->
@@ -7409,6 +7508,129 @@
         });
       }, { root: landing, threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
       document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+    }
+
+    // ============================================================
+    // DASHBOARD: RETELL AI VOICE TELEPHONE TUTOR
+    // ============================================================
+    function setDashRetellLang(lang, btn) {
+      document.getElementById('dash-retell-student-lang').value = lang;
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.retell-lang-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    async function startDashRetellCall() {
+      const name = document.getElementById('dash-retell-student-name').value.trim();
+      let phone = document.getElementById('dash-retell-student-phone').value.trim();
+      const lang = document.getElementById('dash-retell-student-lang').value;
+      const topic = document.getElementById('dash-retell-student-topic').value;
+      const btn = document.getElementById('dash-retell-call-btn');
+
+      if (!name) {
+        showDashRetellStatus('Please enter your name.', 'error');
+        return;
+      }
+      if (!phone) {
+        showDashRetellStatus('Please enter your phone number.', 'error');
+        return;
+      }
+
+      phone = phone.replace(/[\s\-()]/g, '');
+      if (!phone.startsWith('+')) {
+        if (phone.startsWith('91') && phone.length === 12) {
+          phone = '+' + phone;
+        } else if (phone.length === 10) {
+          phone = '+91' + phone;
+        } else {
+          showDashRetellStatus('Please enter a valid Indian phone number (e.g., +91XXXXXXXXXX).', 'error');
+          return;
+        }
+      }
+
+      showDashRetellStatus('📞 Initiating connection with Retell AI server...', 'info');
+      btn.disabled = true;
+      btn.innerHTML = `<span>⏳ Connecting...</span>`;
+      
+      try {
+        const apiKey = 'key_bbf4c3b7cb27343fdcebccc77eef';
+        const agentId = 'agent_31f9457ca7b819ba077b33c1b9';
+
+        const listRes = await fetch('https://api.retellai.com/v2/list-phone-numbers', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`
+          }
+        });
+
+        if (!listRes.ok) {
+          throw new Error(`Auth failed or invalid Retell API configuration.`);
+        }
+
+        const numbers = await listRes.json();
+        let fromNumber = '';
+        if (numbers && numbers.length > 0) {
+          fromNumber = numbers[0].phone_number;
+        } else {
+          throw new Error('No registered active phone number found in your Retell AI account. Make sure you have at least one phone number bound to your agent.');
+        }
+
+        const callRes = await fetch('https://api.retellai.com/v2/create-phone-call', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            from_number: fromNumber,
+            to_number: phone,
+            override_agent_id: agentId,
+            retell_llm_dynamic_variables: {
+              student_name: name,
+              language: lang,
+              topic: topic
+            }
+          })
+        });
+
+        const callData = await callRes.json();
+        if (callRes.ok) {
+          showDashRetellStatus(`🎉 Success! Phone call successfully placed to ${phone}. Answer your phone to speak to your personal AI scientist tutor!`, 'success');
+          btn.style.background = 'var(--green)';
+          btn.innerHTML = `<span>✅ Call Dispatched!</span>`;
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.style.background = '';
+            btn.innerHTML = `<span>📞 Call My Phone Now</span>`;
+          }, 6000);
+        } else {
+          throw new Error(callData.message || 'Error occurred while creating call.');
+        }
+      } catch (error) {
+        console.error(error);
+        showDashRetellStatus(error.message || 'An error occurred while connecting to the Retell calling server. Make sure your API key is fully active.', 'error');
+        btn.disabled = false;
+        btn.innerHTML = `<span>📞 Retry Call</span>`;
+      }
+    }
+
+    function showDashRetellStatus(msg, type) {
+      const statusEl = document.getElementById('dash-retell-call-status');
+      statusEl.style.display = 'block';
+      statusEl.textContent = msg;
+      if (type === 'error') {
+        statusEl.style.color = '#f87171';
+        statusEl.style.background = 'rgba(239, 68, 68, 0.12)';
+        statusEl.style.border = '1px solid rgba(239, 68, 68, 0.25)';
+      } else if (type === 'success') {
+        statusEl.style.color = '#34d399';
+        statusEl.style.background = 'rgba(52, 211, 153, 0.12)';
+        statusEl.style.border = '1px solid rgba(52, 211, 153, 0.25)';
+      } else {
+        statusEl.style.color = '#60a5fa';
+        statusEl.style.background = 'rgba(96, 165, 250, 0.12)';
+        statusEl.style.border = '1px solid rgba(96, 165, 250, 0.25)';
+      }
     }
 
     // ============================================================
