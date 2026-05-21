@@ -3552,6 +3552,8 @@
   <!-- MediaPipe Hands for gesture tracking -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <!-- Local environment config (contains private keys, ignored by Git) -->
+  <script src="config.js"></script>
 
 </head>
 
@@ -5023,8 +5025,8 @@
     // ============================================================
     // STATE
     // ============================================================
-    // Built-in Groq API key placeholder. User should input their own in the AI panel or host it securely.
-    const DEFAULT_GROQ_KEY = '';
+    // Built-in Groq API key. Check if defined in config.js, else fallback to empty string.
+    const DEFAULT_GROQ_KEY = (typeof CONFIG !== 'undefined' && CONFIG.GROQ_API_KEY) ? CONFIG.GROQ_API_KEY : '';
 
     const state = {
       screen: 'landing',
@@ -5034,7 +5036,7 @@
       currentExp: null,
       currentStep: 0,
       startTime: null,
-      apiKey: '',
+      apiKey: DEFAULT_GROQ_KEY,
       isListening: false,
       speechSynth: window.speechSynthesis,
       recognition: null,
