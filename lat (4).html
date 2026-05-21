@@ -11713,7 +11713,9 @@ INSTRUCTIONS:
         activeLink.style.borderColor = 'rgba(96,165,250,0.3)';
       }
       
-      if(viewId === 'student-record') {
+      if(viewId === 'virtual-lab') {
+        renderDashboard();
+      } else if(viewId === 'student-record') {
         updateStudentRecord();
       } else if (viewId === 'notes') {
         populateNotesList();
