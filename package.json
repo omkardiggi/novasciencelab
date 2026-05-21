@@ -1,0 +1,11 @@
+{
+  "name": "novasciencelab",
+  "version": "1.0.0",
+  "description": "NovaSci Lab - Interactive Virtual Science Laboratory",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static deployment setup successfully'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
