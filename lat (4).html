@@ -7555,25 +7555,7 @@
       try {
         const apiKey = 'key_bbf4c3b7cb27343fdcebccc77eef';
         const agentId = 'agent_31f9457ca7b819ba077b33c1b9';
-
-        const listRes = await fetch('https://api.retellai.com/v2/list-phone-numbers', {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${apiKey}`
-          }
-        });
-
-        if (!listRes.ok) {
-          throw new Error(`Auth failed or invalid Retell API configuration.`);
-        }
-
-        const numbers = await listRes.json();
-        let fromNumber = '';
-        if (numbers && numbers.length > 0) {
-          fromNumber = numbers[0].phone_number;
-        } else {
-          throw new Error('No registered active phone number found in your Retell AI account. Make sure you have at least one phone number bound to your agent.');
-        }
+        const fromNumber = '+19342204101';
 
         const callRes = await fetch('https://api.retellai.com/v2/create-phone-call', {
           method: 'POST',
@@ -7679,26 +7661,7 @@
       try {
         const apiKey = 'key_bbf4c3b7cb27343fdcebccc77eef';
         const agentId = 'agent_31f9457ca7b819ba077b33c1b9';
-
-        // Step 1: List phone numbers to get an active outbound "from_number"
-        const listRes = await fetch('https://api.retellai.com/v2/list-phone-numbers', {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${apiKey}`
-          }
-        });
-
-        if (!listRes.ok) {
-          throw new Error(`Auth failed or invalid Retell API configuration.`);
-        }
-
-        const numbers = await listRes.json();
-        let fromNumber = '';
-        if (numbers && numbers.length > 0) {
-          fromNumber = numbers[0].phone_number;
-        } else {
-          throw new Error('No registered active phone number found in your Retell AI account. Make sure you have at least one phone number bound to your agent.');
-        }
+        const fromNumber = '+19342204101';
 
         // Step 2: Trigger the call
         const callRes = await fetch('https://api.retellai.com/v2/create-phone-call', {
